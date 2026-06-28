@@ -9,10 +9,11 @@ export function Contact() {
     <footer id="contact" className="border-t border-slate-200 bg-white px-6 py-24 md:px-12 lg:px-24">
       <div className="mx-auto max-w-5xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 20, rotateX: 8 }}
+          whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.7, type: "spring", stiffness: 60 }}
+          style={{ perspective: 1000 }}
         >
           <h3 className="text-4xl font-extrabold text-slate-900">
             Get in touch
@@ -24,9 +25,10 @@ export function Contact() {
 
           <div className="mt-10 flex flex-col gap-5 sm:flex-row sm:items-center">
             <motion.a
-              whileHover={{ scale: 1.05, x: 4 }}
+              whileHover={{ scale: 1.05, x: 4, rotateY: 4, translateZ: 20, boxShadow: "0 15px 30px -10px rgba(16,185,129,0.2)" }}
               href={`mailto:${personalInfo.email}`}
               className="group inline-flex items-center gap-3 text-emerald-700 transition-colors hover:text-emerald-800"
+              style={{ transformStyle: "preserve-3d" }}
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 border border-emerald-200 transition-colors group-hover:bg-emerald-100">
                 <Mail className="h-5 w-5" />
@@ -39,11 +41,12 @@ export function Contact() {
             </motion.a>
 
             <motion.a
-              whileHover={{ scale: 1.05, x: 4 }}
+              whileHover={{ scale: 1.05, x: 4, rotateY: 4, translateZ: 20, boxShadow: "0 15px 30px -10px rgba(16,185,129,0.2)" }}
               href={personalInfo.linkedIn}
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-3 text-emerald-700 transition-colors hover:text-emerald-800"
+              style={{ transformStyle: "preserve-3d" }}
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 border border-emerald-200 transition-colors group-hover:bg-emerald-100">
                 <Linkedin className="h-5 w-5" />

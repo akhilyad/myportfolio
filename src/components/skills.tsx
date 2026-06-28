@@ -8,10 +8,11 @@ export function Skills() {
     <section id="skills" className="px-6 py-28 md:px-12 lg:px-24 bg-slate-50/50">
       <div className="mx-auto max-w-5xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 20, rotateX: 10 }}
+          whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.7, type: "spring", stiffness: 60 }}
+          style={{ perspective: 1000 }}
         >
           <p className="text-sm font-bold tracking-widest text-emerald-700 uppercase">
             Technical Skills
@@ -22,37 +23,55 @@ export function Skills() {
           {skills.map((category, catIndex) => (
             <motion.div
               key={category.category}
-              initial={{ opacity: 0, y: 20, rotateX: 6 }}
-              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+              initial={{ opacity: 0, y: 30, rotateX: 10, rotateY: -3 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0, rotateY: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: catIndex * 0.1, type: "spring", stiffness: 60 }}
+              transition={{ duration: 0.6, delay: catIndex * 0.12, type: "spring", stiffness: 50, damping: 20 }}
+              animate={{ y: [0, -6, 0] }}
+              // Floating sine wave with unique phase per card
               whileHover={{
-                y: -6,
-                rotateY: 3,
-                rotateX: -2,
-                translateZ: 20,
-                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.08)",
+                y: -10,
+                rotateY: 4,
+                rotateX: -3,
+                translateZ: 30,
+                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.1)",
               }}
               className="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition-all"
-              style={{ transformStyle: "preserve-3d" }}
+              style={{
+                transformStyle: "preserve-3d",
+                animation: `float 6s ease-in-out ${catIndex * 0.8}s infinite`,
+              }}
             >
               <h4 className="text-sm font-bold uppercase tracking-wider text-slate-900">
                 {category.category}
               </h4>
               <div className="mt-5 flex flex-wrap gap-2">
-                {category.items.map((item) => (
-                  <span
+                {category.items.map((item, i) => (
+                  <motion.span
                     key={item}
-                    className="rounded-lg bg-emerald-50 px-3 py-1.5 text-sm font-semibold text-emerald-800 border border-emerald-100"
+                    initial={{ opacity: 0, scale: 0.8, rotateX: -10 }}
+                    whileInView={{ opacity: 1, scale: 1, rotateX: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 + i * 0.05, type: "spring", stiffness: 80 }}
+                    whileHover={{ scale: 1.08, rotateZ: 2, translateZ: 10 }}
+                    className="rounded-lg bg-emerald-50 px-3 py-1.5 text-sm font-semibold text-emerald-800 border border-emerald-100 cursor-default"
+                    style={{ transformStyle: "preserve-3d" }}
                   >
                     {item}
-                  </span>
+                  </motion.span>
                 ))}
               </div>
             </motion.div>
           ))}
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-6px); }
+        }
+      `}</style>
     </section>
   );
 }
