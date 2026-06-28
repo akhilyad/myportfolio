@@ -51,7 +51,6 @@ export function Experience() {
                 className="relative pl-12 md:pl-20"
                 style={{ perspective: 1000 }}
               >
-                {/* Pulsing timeline dot */}
                 <motion.div
                   className="absolute left-2.5 top-3 h-4 w-4 rounded-full border-4 border-white bg-emerald-600 shadow-md md:left-4.5"
                   animate={

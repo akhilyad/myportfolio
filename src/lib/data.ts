@@ -113,6 +113,12 @@ export const projects: Project[] = [
     tech: ["PyPSA", "Python", "Energy Economics", "Excel"],
   },
   {
+    name: "Satellite Power System Fault Detection",
+    description:
+      "Developed a deep learning-based fault detection system for satellite power systems using PCA + DNN on NASA ADAPT data, achieving 99.75% accuracy versus SVM and MLP baselines. Built a working hardware model for real sensor validation.",
+    tech: ["Python", "TensorFlow", "PCA", "DNN", "Hardware-in-the-Loop"],
+  },
+  {
     name: "Gas Leak Detection ML Pipeline",
     description:
       "Published research on machine learning algorithms for gas leak detection in industrial environments. Springer Singapore 2020. DOI-linked publication covering feature engineering and classifier optimisation.",

@@ -27,8 +27,6 @@ export function Skills() {
               whileInView={{ opacity: 1, y: 0, rotateX: 0, rotateY: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: catIndex * 0.12, type: "spring", stiffness: 50, damping: 20 }}
-              animate={{ y: [0, -6, 0] }}
-              // Floating sine wave with unique phase per card
               whileHover={{
                 y: -10,
                 rotateY: 4,
@@ -37,10 +35,7 @@ export function Skills() {
                 boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.1)",
               }}
               className="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition-all"
-              style={{
-                transformStyle: "preserve-3d",
-                animation: `float 6s ease-in-out ${catIndex * 0.8}s infinite`,
-              }}
+              style={{ transformStyle: "preserve-3d" }}
             >
               <h4 className="text-sm font-bold uppercase tracking-wider text-slate-900">
                 {category.category}
@@ -65,13 +60,6 @@ export function Skills() {
           ))}
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-6px); }
-        }
-      `}</style>
     </section>
   );
 }

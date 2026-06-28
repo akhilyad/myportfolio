@@ -39,14 +39,12 @@ function ProjectCard({ project, index }: { project: (typeof projects)[0]; index:
       className="group relative flex flex-col rounded-2xl border border-slate-200 bg-white p-7 shadow-sm overflow-hidden"
       style={{ transformStyle: "preserve-3d", cursor: project.url ? "pointer" : "default" }}
     >
-      {/* Cursor spotlight */}
       <div
         className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
         style={{
           background: `radial-gradient(600px circle at ${mouse.x}px ${mouse.y}px, rgba(16,185,129,0.12), transparent 40%)`,
         }}
       />
-      {/* Border glow on hover */}
       <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 border-2 border-emerald-300/50" />
 
       <div className="relative flex items-start justify-between">
