@@ -101,19 +101,7 @@ export function Hero() {
             </motion.div>
           </motion.div>  {/* ← THIS WAS MISSING */}
 
-          <motion.div
-            animate={{ y: [0, 12, 0] }}
-            transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
-            className="absolute bottom-10 left-1/2 -translate-x-1/2"
-          >
-            <div className="flex h-10 w-6 items-start justify-center rounded-full border-2 border-slate-300 p-1.5">
-              <motion.div
-                animate={{ y: [0, 12, 0], opacity: [1, 0.3, 1] }}
-                transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
-                className="h-2 w-full rounded-full bg-slate-400"
-              />
-            </div>
-          </motion.div>
+          
         </motion.div>
       </section>
     </AuroraBackground>
