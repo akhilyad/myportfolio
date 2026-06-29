@@ -33,9 +33,7 @@ export function Header() {
       }`}
     >
       <div className="flex h-16 items-center justify-between px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
-        <a href="#" className="text-xl font-bold tracking-tight text-slate-900">
-          AY
-        </a>
+        
         {/* Mobile menu button only */}
         <button
           onClick={() => setOpen(!open)}

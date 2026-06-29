@@ -56,18 +56,6 @@ export function Hero() {
           transition={{ duration: 1, ease: "easeOut" }}
           style={{ transformStyle: "preserve-3d" }}
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9, rotateX: 10 }}
-            animate={{ opacity: 1, scale: 1, rotateX: 0 }}
-            transition={{ delay: 0.2, duration: 0.6, type: "spring", stiffness: 70 }}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50/80 px-4 py-1.5 text-sm font-medium text-emerald-800 backdrop-blur-sm"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-60" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-600" />
-            </span>
-            {personalInfo.available}
-          </motion.div>
 
           <h1 className="text-6xl font-extrabold tracking-tight text-slate-900 md:text-7xl lg:text-8xl leading-[0.95]">
             {personalInfo.name}
