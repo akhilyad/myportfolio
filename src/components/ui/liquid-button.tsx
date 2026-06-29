@@ -1,7 +1,5 @@
 'use client';
-import { motion, AnimatePresence } from 'framer-motion';
 import React, { useState } from 'react';
-import { Mail } from 'lucide-react';
 import { Liquid, Colors } from './button-1';
 
 const EMERALD_COLORS: Colors = {
@@ -34,9 +32,9 @@ type LiquidButtonProps = {
 export function LiquidButton({ children, href, onClick, icon }: LiquidButtonProps) {
   const [isHovered, setIsHovered] = useState(false);
 
-  const content = (
+  const innerContent = (
     <div
-      className="relative inline-block sm:w-36 w-14 h-[2.7em] mx-auto group dark:bg-black bg-white dark:border-white border-black border-2 rounded-lg"
+      className="relative inline-block w-36 h-[2.7em] mx-auto group dark:bg-black bg-white dark:border-white border-black border-2 rounded-lg"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -69,27 +67,29 @@ export function LiquidButton({ children, href, onClick, icon }: LiquidButtonProp
         <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[40%] w-[70.8%] h-[42.85%] rounded-lg filter blur-[15px] bg-emerald-600/20"></span>
       </div>
 
-      {/* Content */}
-      <button
-        className="absolute inset-0 rounded-lg bg-transparent cursor-pointer"
-        type="button"
-        onClick={onClick}
-      >
-        <span className="flex items-center justify-center px-4 gap-2 rounded-lg group-hover:text-emerald-300 text-white text-sm font-semibold tracking-wide whitespace-nowrap">
-          {icon || <Mail className="w-5 h-5 flex-shrink-0" />}
-          <span className="sm:inline-block hidden">{children}</span>
-        </span>
-      </button>
+      {/* Content - always show text, not just on sm */}
+      <span className="absolute inset-0 flex items-center justify-center px-4 gap-2 rounded-lg group-hover:text-emerald-300 text-white text-sm font-semibold tracking-wide whitespace-nowrap pointer-events-none">
+        {icon}
+        {children}
+      </span>
     </div>
   );
 
   if (href) {
     return (
-      <a href={href} className="no-underline inline-block">
-        {content}
+      <a 
+        href={href} 
+        className="no-underline inline-block cursor-pointer" 
+        onClick={onClick}
+      >
+        {innerContent}
       </a>
     );
   }
 
-  return content;
+  return (
+    <div onClick={onClick} className="inline-block cursor-pointer">
+      {innerContent}
+    </div>
+  );
 }
