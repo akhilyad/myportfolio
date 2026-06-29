@@ -33,19 +33,19 @@ const skills = [
 
 export function Skills() {
   return (
-    <section id="skills" className="py-20 md:py-28 px-4 sm:px-6 md:px-12 lg:px-24 max-w-6xl mx-auto">
+    <section id="skills" className="py-16 sm:py-20 md:py-28 px-5 sm:px-6 md:px-12 lg:px-24 max-w-6xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="mb-12"
+        className="mb-10 sm:mb-12"
       >
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">Technical Skills</h2>
         <div className="mt-2 h-1 w-20 rounded-full bg-blue-500" />
       </motion.div>
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
         {skills.map((domain, index) => (
           <motion.div
             key={domain.category}
@@ -53,21 +53,22 @@ export function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
+            className="min-w-0"
           >
             <GlowCard
               glowColor={domain.glowColor}
               customSize
-              className="h-full w-full !p-6 !gap-4 !rounded-2xl !shadow-none hover:!shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-shadow duration-300"
+              className="h-full w-full !p-5 sm:!p-6 !gap-3 sm:!gap-4 !rounded-2xl !shadow-none hover:!shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-shadow duration-300"
             >
               <div className="flex flex-col h-full">
-                <h3 className="mb-4 text-xs font-bold uppercase tracking-[0.15em] text-slate-500">
+                <h3 className="mb-3 sm:mb-4 text-xs font-bold uppercase tracking-[0.15em] text-slate-500">
                   {domain.category}
                 </h3>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {domain.items.map((item) => (
                     <span
                       key={item}
-                      className="rounded-lg bg-slate-50/80 px-3 py-1.5 text-sm font-medium text-slate-700 border border-slate-100/80 hover:border-slate-300 hover:bg-white transition-colors cursor-default"
+                      className="rounded-lg bg-slate-50/80 px-2.5 py-1 sm:px-3 sm:py-1.5 text-xs sm:text-sm font-medium text-slate-700 border border-slate-100/80 hover:border-slate-300 hover:bg-white transition-colors cursor-default"
                     >
                       {item}
                     </span>

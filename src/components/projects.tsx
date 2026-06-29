@@ -26,19 +26,19 @@ const projects = [
 
 export function Projects() {
   return (
-    <section id="projects" className="py-20 md:py-28 px-4 sm:px-6 md:px-12 lg:px-24 max-w-6xl mx-auto">
+    <section id="projects" className="py-16 sm:py-20 md:py-28 px-5 sm:px-6 md:px-12 lg:px-24 max-w-6xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="mb-12"
+        className="mb-10 sm:mb-12"
       >
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">Key Projects</h2>
         <div className="mt-2 h-1 w-20 rounded-full bg-emerald-500" />
       </motion.div>
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, index) => (
           <motion.div
             key={project.name}
@@ -46,24 +46,25 @@ export function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: index * 0.15 }}
+            className="min-w-0"
           >
             <GlowCard
               glowColor={project.glowColor}
               customSize
-              className="h-full w-full !p-6 !gap-4 !rounded-2xl !shadow-none hover:!shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-shadow duration-300"
+              className="h-full w-full !p-5 sm:!p-6 !gap-3 sm:!gap-4 !rounded-2xl !shadow-none hover:!shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-shadow duration-300"
             >
               <div className="flex flex-col h-full">
-                <h3 className="text-lg font-bold text-slate-900 mb-3 leading-snug">
+                <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-2 sm:mb-3 leading-snug">
                   {project.name}
                 </h3>
-                <p className="text-sm leading-relaxed text-slate-600 mb-5 flex-grow">
+                <p className="text-sm leading-relaxed text-slate-600 mb-4 sm:mb-5 flex-grow">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-md bg-slate-100/80 px-2.5 py-1 text-xs font-medium text-slate-600 border border-slate-200/60"
+                      className="rounded-md bg-slate-100/80 px-2 py-0.5 sm:px-2.5 sm:py-1 text-xs font-medium text-slate-600 border border-slate-200/60"
                     >
                       {tag}
                     </span>
