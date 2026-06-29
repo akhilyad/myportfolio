@@ -82,19 +82,15 @@ export function Hero() {
 
           <div className="mt-8 max-w-3xl space-y-3" style={{ perspective: 800 }}>
             {sentences.map((sentence, i) => (
-              <motion.p
-                key={i}
-                initial={{ opacity: 0, rotateX: 20, y: 25, translateZ: -50 }}
-                animate={{ opacity: 1, rotateX: 0, y: 0, translateZ: 0 }}
-                transition={{ delay: 0.6 + i * 0.15, duration: 0.7, type: "spring", stiffness: 60 }}
-                className="text-lg leading-relaxed text-slate-600 hyphens-none md:text-xl"
-                style={{ transformStyle: "preserve-3d" }}
-              >
-                {sentence}
-              </motion.p>
-            ))}
-          </div>
-        </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20, rotateX: 5 }}
+            animate={{ opacity: 1, y: 0, rotateX: 0 }}
+            transition={{ delay: 0.5, duration: 0.6, type: "spring", stiffness: 60 }}
+            className="mx-auto max-w-2xl text-lg leading-relaxed text-slate-600 space-y-4"
+          >
+            <p><strong>System Architecture:</strong> Migrated 45+ legacy control systems to ABB 800xA; C to IEC 61131-3 ST; MTBF up 43%.</p>
+            <p><strong>Project Management:</strong> Led FAT/SATs across 8 Tier-1 OEMs for Qatar Energy's $250M offshore Telemetry EPC, achieved 98% uptime.</p>
+          </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 30, rotateX: 10 }}
