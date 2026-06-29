@@ -1,5 +1,6 @@
 "use client";
 
+import { LiquidButton } from "@/components/ui/liquid-button";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { personalInfo } from "@/lib/data";
 import { Mail, Linkedin, FileText, MapPin, ArrowRight } from "lucide-react";
@@ -103,15 +104,12 @@ export function Hero() {
           initial={{ opacity: 0, y: 30, rotateX: 10 }}
           animate={{ opacity: 1, y: 0, rotateX: 0 }}
           transition={{ delay: 0.8, duration: 0.6, type: "spring", stiffness: 60 }}
-          className="mt-12 flex flex-wrap gap-5"
+          className="mt-12 flex flex-wrap gap-5 items-center"
         >
-          <a
-            href={`mailto:${personalInfo.email}`}
-            className="inline-flex items-center gap-2.5 rounded-full bg-emerald-700 px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-700/20 hover:bg-emerald-800 transition-colors no-underline cursor-pointer"
-          >
-            <Mail className="h-5 w-5" />
-            <span className="whitespace-nowrap">Contact</span>
-            <ArrowRight className="h-4 w-4" />
+          <a href={`mailto:${personalInfo.email}`} className="no-underline">
+            <LiquidButton icon={<Mail className="h-4 w-4" />}>
+              Contact
+            </LiquidButton>
           </a>
 
           <a

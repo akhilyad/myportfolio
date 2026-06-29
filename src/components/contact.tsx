@@ -27,29 +27,25 @@ export function Contact() {
             Open to Data Center Engineering, Critical MEP, DCS Automation and EPC roles in the EU and China. Available immediately.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <motion.a
-              href={`mailto:${personalInfo.email}`}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-8 py-4 text-base font-bold text-white shadow-lg shadow-emerald-500/25 hover:bg-emerald-400 transition-colors"
-            >
-              <Mail className="h-5 w-5" />
-              Get in Touch
-              <ArrowRight className="h-5 w-5" />
-            </motion.a>
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+        <a
+          href={`mailto:${personalInfo.email}`}
+          className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-8 py-4 text-base font-bold text-white shadow-lg shadow-emerald-500/25 hover:bg-emerald-400 transition-colors no-underline cursor-pointer"
+        >
+          <Mail className="h-5 w-5" />
+          Get in Touch
+          <ArrowRight className="h-5 w-5" />
+        </a>
 
-            <motion.a
-              href="/Akhil_Yadav_ABB_ProjectLeadEngineer.pdf"
-              download
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center gap-2 rounded-xl border-2 border-slate-600 bg-transparent px-8 py-4 text-base font-bold text-white hover:bg-white/10 transition-colors"
-            >
-              <Download className="h-5 w-5" />
-              Download Résumé
-            </motion.a>
-          </div>
+        <a
+          href="/Akhil_Yadav_ABB_ProjectLeadEngineer.pdf"
+          download
+          className="inline-flex items-center gap-2 rounded-xl border-2 border-slate-600 bg-transparent px-8 py-4 text-base font-bold text-white hover:bg-white/10 transition-colors no-underline cursor-pointer"
+        >
+          <Download className="h-5 w-5" />
+          Download Résumé
+        </a>
+      </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-slate-400">
             <a href={`mailto:${personalInfo.email}`} className="flex items-center gap-2 hover:text-emerald-400 transition-colors">
