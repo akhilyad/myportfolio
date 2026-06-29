@@ -41,7 +41,7 @@ export function Hero() {
         <div
           className="absolute inset-0
             [--white-gradient:repeating-linear-gradient(100deg,var(--white)_0%,var(--white)_7%,var(--transparent)_10%,var(--transparent)_12%,var(--white)_16%)]
-            [--aurora:repeating-linear-gradient(100deg,var(--emerald-500)_10%,var(--teal-300)_15%,var(--emerald-300)_20%,var(--green-200)_25%,var(--emerald-400)_30%)]
+            [--aurora:repeating-linear-gradient(100deg,var(--blue-100)_10%,var(--indigo-100)_15%,var(--violet-100)_20%,var(--slate-100)_25%,var(--blue-50)_30%)]
             [background-image:var(--white-gradient),var(--aurora)]
             [background-size:300%,_200%]
             [background-position:50%_50%,50%_50%]
