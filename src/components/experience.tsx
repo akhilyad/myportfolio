@@ -1,14 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { experience } from "@/lib/data";
 import { ChevronDown, MapPin, Calendar } from "lucide-react";
 
 function ExperienceCard({ job, index }: { job: typeof experience[0]; index: number }) {
   const [expanded, setExpanded] = useState(false);
-  const visibleBullets = expanded ? job.achievements : job.achievements.slice(0, 3);
-  const hasMore = job.achievements.length > 3;
+  const visibleBullets = expanded ? job.bullets : job.bullets.slice(0, 3);
+  const hasMore = job.bullets.length > 3;
 
   return (
     <motion.div
@@ -38,7 +38,7 @@ function ExperienceCard({ job, index }: { job: typeof experience[0]; index: numb
               </span>
               <span className="flex items-center gap-1">
                 <Calendar className="h-3.5 w-3.5" />
-                {job.period}
+                {job.dates}
               </span>
             </div>
           </div>
@@ -56,7 +56,7 @@ function ExperienceCard({ job, index }: { job: typeof experience[0]; index: numb
         </div>
 
         <ul className="relative space-y-3">
-          {visibleBullets.map((achievement, i) => (
+          {visibleBullets.map((bullet, i) => (
             <motion.li
               key={i}
               initial={expanded ? { opacity: 0, y: 10 } : false}
@@ -65,7 +65,7 @@ function ExperienceCard({ job, index }: { job: typeof experience[0]; index: numb
               className="flex items-start gap-3 text-sm leading-relaxed text-slate-600"
             >
               <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" />
-              <span>{achievement}</span>
+              <span>{bullet}</span>
             </motion.li>
           ))}
           
@@ -83,7 +83,7 @@ function ExperienceCard({ job, index }: { job: typeof experience[0]; index: numb
               className="flex items-center gap-1.5 text-xs font-medium text-emerald-600 hover:text-emerald-700"
             >
               <ChevronDown className="h-4 w-4" />
-              <span>{expanded ? "Show less" : `Show ${job.achievements.length - 3} more`}</span>
+              <span>{expanded ? "Show less" : `Show ${job.bullets.length - 3} more`}</span>
             </motion.div>
           </div>
         )}
