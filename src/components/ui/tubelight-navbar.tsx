@@ -50,18 +50,18 @@ export function NavBar({ items, className }: NavBarProps) {
               onClick={() => setActiveTab(item.name)}
               className={cn(
                 "relative cursor-pointer text-xs sm:text-sm font-semibold px-3 py-2 sm:px-6 sm:py-2 rounded-full transition-colors",
-                "text-slate-600 hover:text-emerald-700",
-                isActive && "bg-emerald-50 text-emerald-700",
+                "text-slate-800 hover:text-black",
+                isActive && "bg-slate-100 text-black",
               )}
             >
-              <span className="flex items-center gap-1.5">
+              <span className="flex items-center gap-1.5 drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">
                 <Icon size={16} className="sm:hidden" strokeWidth={2.5} />
-                <span>{item.name}</span>
+                <span className="drop-shadow-[0_0_6px_rgba(255,255,255,0.9)]">{item.name}</span>
               </span>
               {isActive && (
                 <motion.div
                   layoutId="lamp"
-                  className="absolute inset-0 w-full bg-emerald-500/5 rounded-full -z-10"
+                  className="absolute inset-0 w-full bg-black/5 rounded-full -z-10"
                   initial={false}
                   transition={{
                     type: "spring",
@@ -69,10 +69,10 @@ export function NavBar({ items, className }: NavBarProps) {
                     damping: 30,
                   }}
                 >
-                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-emerald-500 rounded-t-full">
-                    <div className="absolute w-12 h-6 bg-emerald-500/20 rounded-full blur-md -top-2 -left-2" />
-                    <div className="absolute w-8 h-6 bg-emerald-500/20 rounded-full blur-md -top-1" />
-                    <div className="absolute w-4 h-4 bg-emerald-500/20 rounded-full blur-sm top-0 left-2" />
+                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-black rounded-t-full drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]">
+                    <div className="absolute w-12 h-6 bg-white/30 rounded-full blur-md -top-2 -left-2" />
+                    <div className="absolute w-8 h-6 bg-white/30 rounded-full blur-md -top-1" />
+                    <div className="absolute w-4 h-4 bg-white/30 rounded-full blur-sm top-0 left-2" />
                   </div>
                 </motion.div>
               )}

@@ -1,6 +1,7 @@
 "use client";
 
 import { LiquidButton } from "@/components/ui/liquid-button";
+import { AuroraBackground } from "@/components/ui/aurora-background";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { personalInfo } from "@/lib/data";
 import { Mail, Linkedin, FileText, MapPin, ArrowRight } from "lucide-react";
@@ -31,19 +32,27 @@ export function Hero() {
     .map((s) => s.trim() + (s.endsWith(".") ? "" : "."));
 
   return (
-    <section
-      onMouseMove={handleMouseMove}
-      className="relative flex min-h-[calc(100vh-4rem)] flex-col justify-center overflow-hidden px-4 pt-8 pb-16 sm:px-6 md:px-12 lg:px-24"
-    >
+   <AuroraBackground className="h-auto min-h-[calc(100vh-4rem)]">
+     <section
+       onMouseMove={handleMouseMove}
+       className="relative flex min-h-[calc(100vh-4rem)] flex-col justify-center overflow-hidden px-4 pt-8 pb-16 sm:px-6 md:px-12 lg:px-24"
+     >
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <motion.div
-          style={{ x: orbX, y: orbY }}
-          className="absolute -top-20 -right-20 h-[700px] w-[700px] rounded-full bg-emerald-100/50 blur-3xl"
-        />
-        <motion.div
-          style={{ x: useTransform(orbX, (v) => v * -0.6), y: useTransform(orbY, (v) => v * -0.6) }}
-          className="absolute -bottom-32 -left-32 h-[600px] w-[600px] rounded-full bg-slate-200/60 blur-3xl"
-        />
+        <div
+          className="absolute inset-0
+            [--white-gradient:repeating-linear-gradient(100deg,var(--white)_0%,var(--white)_7%,var(--transparent)_10%,var(--transparent)_12%,var(--white)_16%)]
+            [--aurora:repeating-linear-gradient(100deg,var(--emerald-500)_10%,var(--teal-300)_15%,var(--emerald-300)_20%,var(--green-200)_25%,var(--emerald-400)_30%)]
+            [background-image:var(--white-gradient),var(--aurora)]
+            [background-size:300%,_200%]
+            [background-position:50%_50%,50%_50%]
+            filter blur-[10px]
+            after:content-[''] after:absolute after:inset-0 after:[background-image:var(--white-gradient),var(--aurora)]
+            after:[background-size:200%,_100%] 
+            after:animate-aurora after:[background-attachment:fixed] after:mix-blend-difference
+            pointer-events-none
+            opacity-50 will-change-transform
+            [mask-image:radial-gradient(ellipse_at_100%_0%,black_10%,var(--transparent)_70%)]"
+        ></div>
       </div>
 
       <motion.div
@@ -146,5 +155,6 @@ export function Hero() {
         </div>
       </motion.div>
     </section>
+  </AuroraBackground>
   );
 }
