@@ -1,26 +1,28 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { projects } from "@/lib/data";
-import { ExternalLink, Wind, Zap, BarChart3, Factory, Satellite, FlaskConical } from "lucide-react";
+import { GlowCard } from "@/components/ui/spotlight-card";
 
-const categoryConfig: Record<string, { color: string; bgColor: string; icon: React.ReactNode }> = {
-  "Energy": { color: "bg-amber-500", bgColor: "bg-amber-50", icon: <Zap className="h-4 w-4 text-amber-600" /> },
-  "Data Center": { color: "bg-blue-500", bgColor: "bg-blue-50", icon: <BarChart3 className="h-4 w-4 text-blue-600" /> },
-  "Industrial": { color: "bg-slate-600", bgColor: "bg-slate-50", icon: <Factory className="h-4 w-4 text-slate-600" /> },
-  "Research": { color: "bg-violet-500", bgColor: "bg-violet-50", icon: <FlaskConical className="h-4 w-4 text-violet-600" /> },
-  "Offshore": { color: "bg-cyan-500", bgColor: "bg-cyan-50", icon: <Wind className="h-4 w-4 text-cyan-600" /> },
-  "Satellite": { color: "bg-rose-500", bgColor: "bg-rose-50", icon: <Satellite className="h-4 w-4 text-rose-600" /> },
-};
-
-function getCategory(title: string): string {
-  if (title.includes("Wind") || title.includes("Offshore") || title.includes("Platform")) return "Offshore";
-  if (title.includes("Hydrogen") || title.includes("Power") || title.includes("Energy")) return "Energy";
-  if (title.includes("Dashboard") || title.includes("Procurement")) return "Data Center";
-  if (title.includes("DCS") || title.includes("Migration")) return "Industrial";
-  if (title.includes("Satellite")) return "Satellite";
-  return "Research";
-}
+const projects = [
+  {
+    name: "Offshore Wind Scenario Modelling (Dogger Bank)",
+    description: "Developed multi-scenario power system models for the Dogger Bank offshore wind complex, integrating PyPSA-based energy system simulations with real-world meteorological and grid constraint data to validate turbine layouts and inter-array cable routing.",
+    tags: ["PyPSA", "Python", "Offshore Wind", "Grid Integration"],
+    glowColor: "blue" as const,
+  },
+  {
+    name: "Gas Leak Detection ML Pipeline",
+    description: "Built an end-to-end machine learning pipeline for real-time gas leak detection in process plants, combining acoustic sensor arrays with anomaly detection algorithms to achieve sub-second response times and 99.2% classification accuracy.",
+    tags: ["Python", "TensorFlow", "Signal Processing", "DCS Integration"],
+    glowColor: "purple" as const,
+  },
+  {
+    name: "Green Hydrogen Cost Modelling",
+    description: "Created a comprehensive techno-economic model for green hydrogen production facilities, incorporating electrolyser degradation curves, renewable energy intermittency profiles, and CAPEX/OPEX sensitivity analysis for investment decision support.",
+    tags: ["PyPSA", "Excel VBA", "Techno-Economic Analysis", "Renewables"],
+    glowColor: "green" as const,
+  },
+];
 
 export function Projects() {
   return (
@@ -37,64 +39,40 @@ export function Projects() {
       </motion.div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project, index) => {
-          const category = getCategory(project.name);
-          const config = categoryConfig[category];
-
-          return (
-            <motion.div
-              key={project.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
-              whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              className="group relative overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm hover:shadow-xl transition-all duration-300"
+        {projects.map((project, index) => (
+          <motion.div
+            key={project.name}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, delay: index * 0.15 }}
+          >
+            <GlowCard
+              glowColor={project.glowColor}
+              customSize
+              className="h-full w-full !p-6 !gap-4 !rounded-2xl !shadow-none hover:!shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-shadow duration-300"
             >
-              {/* Colored header bar */}
-              <div className={`h-1.5 w-full ${config.color}`} />
-              
-              <div className="p-6">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className={`flex items-center justify-center h-8 w-8 rounded-lg ${config.bgColor}`}>
-                    {config.icon}
-                  </span>
-                  <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">{category}</span>
-                </div>
-
-                <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-emerald-700 transition-colors">
+              <div className="flex flex-col h-full">
+                <h3 className="text-lg font-bold text-slate-900 mb-3 leading-snug">
                   {project.name}
                 </h3>
-                <p className="text-sm leading-relaxed text-slate-600 mb-4 line-clamp-3">
+                <p className="text-sm leading-relaxed text-slate-600 mb-5 flex-grow">
                   {project.description}
                 </p>
-
-                <div className="flex flex-wrap gap-1.5">
-                  {project.tech.map((t) => (
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
                     <span
-                      key={t}
-                      className="rounded-md bg-slate-100 px-2 py-1 text-xs font-medium text-slate-600"
+                      key={tag}
+                      className="rounded-md bg-slate-100/80 px-2.5 py-1 text-xs font-medium text-slate-600 border border-slate-200/60"
                     >
-                      {t}
+                      {tag}
                     </span>
                   ))}
                 </div>
-
-                {project.url && (
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-emerald-600 hover:text-emerald-700 transition-colors"
-                  >
-                    View Project
-                    <ExternalLink className="h-3.5 w-3.5" />
-                  </a>
-                )}
               </div>
-            </motion.div>
-          );
-        })}
+            </GlowCard>
+          </motion.div>
+        ))}
       </div>
     </section>
   );
