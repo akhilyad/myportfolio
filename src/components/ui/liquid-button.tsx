@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { Liquid } from './button-1';
+import { Liquid, Colors } from './button-1';
 import { cn } from '@/lib/utils';
 
 type LiquidButtonProps = {
@@ -8,7 +8,7 @@ type LiquidButtonProps = {
   href?: string;
   onClick?: () => void;
   className?: string;
-  colors?: Record<string, string>;
+  colors?: Colors;
   icon?: React.ReactNode;
 };
 
