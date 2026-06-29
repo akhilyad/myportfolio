@@ -105,39 +105,33 @@ export function Hero() {
           transition={{ delay: 0.8, duration: 0.6, type: "spring", stiffness: 60 }}
           className="mt-12 flex flex-wrap gap-5"
         >
-          <motion.a
+          <a
             href={`mailto:${personalInfo.email}`}
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center gap-2.5 rounded-full bg-emerald-700 px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-700/20 hover:bg-emerald-800 transition-colors no-underline"
+            className="inline-flex items-center gap-2.5 rounded-full bg-emerald-700 px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-700/20 hover:bg-emerald-800 transition-colors no-underline cursor-pointer"
           >
             <Mail className="h-5 w-5" />
             <span className="whitespace-nowrap">Contact</span>
             <ArrowRight className="h-4 w-4" />
-          </motion.a>
+          </a>
 
-          <motion.a
+          <a
             href="/Akhil_Yadav_ABB_ProjectLeadEngineer.pdf"
             download
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center gap-2.5 rounded-full border-2 border-slate-300 bg-white/80 backdrop-blur-sm px-7 py-3.5 text-sm font-bold text-slate-800 hover:bg-white hover:border-slate-400 transition-all no-underline"
+            className="inline-flex items-center gap-2.5 rounded-full border border-white/40 bg-white/20 backdrop-blur-xl px-7 py-3.5 text-sm font-bold text-slate-800 shadow-[0_4px_24px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.4)] hover:bg-white/30 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.5)] transition-all no-underline cursor-pointer"
           >
             <FileText className="h-5 w-5" />
             <span className="whitespace-nowrap">View Résumé</span>
-          </motion.a>
+          </a>
 
-          <motion.a
+          <a
             href={personalInfo.linkedIn}
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center gap-2.5 rounded-full border-2 border-slate-300 bg-white/80 backdrop-blur-sm px-7 py-3.5 text-sm font-bold text-slate-800 hover:bg-white hover:border-slate-400 transition-all no-underline"
+            className="inline-flex items-center gap-2.5 rounded-full border border-white/40 bg-white/20 backdrop-blur-xl px-7 py-3.5 text-sm font-bold text-slate-800 shadow-[0_4px_24px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.4)] hover:bg-white/30 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.5)] transition-all no-underline cursor-pointer"
           >
             <Linkedin className="h-5 w-5" />
             <span className="whitespace-nowrap">LinkedIn</span>
-          </motion.a>
+          </a>
         </motion.div>
 
         <motion.div
