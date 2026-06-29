@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { LiquidButton } from "@/components/ui/liquid-glass-button";
 
 const navLinks = [
   { href: "#experience", label: "Experience" },
@@ -36,15 +37,12 @@ export function Header() {
         <a href="#" className="text-lg font-bold tracking-tight text-slate-900">
           AY
         </a>
-        <nav className="hidden md:flex md:gap-8">
+        <nav className="hidden md:flex md:gap-3">
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-slate-600 transition-colors hover:text-emerald-700 relative group"
-            >
-              {link.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-600 transition-all group-hover:w-full" />
+            <a key={link.href} href={link.href} className="no-underline">
+              <LiquidButton size="sm" className="text-slate-700 hover:text-emerald-700 font-medium text-xs">
+                {link.label}
+              </LiquidButton>
             </a>
           ))}
         </nav>

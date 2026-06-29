@@ -3,7 +3,7 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { personalInfo } from "@/lib/data";
 import { Mail, Linkedin, FileText, MapPin, ArrowRight } from "lucide-react";
-import { MagneticButton } from "./magnetic-button";
+import { LiquidButton } from "@/components/ui/liquid-glass-button";
 
 export function Hero() {
   const mouseX = useMotionValue(0.5);
@@ -35,7 +35,6 @@ export function Hero() {
       onMouseMove={handleMouseMove}
       className="relative flex min-h-[calc(100vh-4rem)] flex-col justify-center overflow-hidden px-4 pt-8 pb-16 sm:px-6 md:px-12 lg:px-24"
     >
-      {/* Ambient depth orbs with parallax */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <motion.div
           style={{ x: orbX, y: orbY }}
@@ -106,33 +105,27 @@ export function Hero() {
           transition={{ delay: 0.8, duration: 0.6, type: "spring", stiffness: 60 }}
           className="mt-12 flex flex-wrap gap-4"
         >
-          <MagneticButton
-            href={`mailto:${personalInfo.email}`}
-            className="group inline-flex items-center gap-2 rounded-xl bg-emerald-700 px-8 py-4 text-sm font-bold text-white shadow-lg shadow-emerald-700/20 transition-colors hover:bg-emerald-800"
-          >
-            <Mail className="h-4 w-4" />
-            Contact
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </MagneticButton>
+          <a href={`mailto:${personalInfo.email}`} className="no-underline">
+            <LiquidButton size="lg" className="bg-emerald-700 text-white hover:bg-emerald-800 font-bold">
+              <Mail className="h-4 w-4" />
+              Contact
+              <ArrowRight className="h-4 w-4" />
+            </LiquidButton>
+          </a>
 
-          <MagneticButton
-            href="/Akhil_Yadav_ABB_ProjectLeadEngineer.pdf"
-            download
-            className="inline-flex items-center gap-2 rounded-xl border-2 border-slate-200 bg-white px-8 py-4 text-sm font-bold text-slate-800 shadow-sm transition-colors hover:border-slate-300 hover:bg-slate-50"
-          >
-            <FileText className="h-4 w-4" />
-            View Résumé
-          </MagneticButton>
+          <a href="/Akhil_Yadav_ABB_ProjectLeadEngineer.pdf" download className="no-underline">
+            <LiquidButton size="lg" className="border-2 border-slate-200 text-slate-800 hover:bg-slate-50 font-bold">
+              <FileText className="h-4 w-4" />
+              View Résumé
+            </LiquidButton>
+          </a>
 
-          <MagneticButton
-            href={personalInfo.linkedIn}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-xl border-2 border-slate-200 bg-white px-8 py-4 text-sm font-bold text-slate-800 shadow-sm transition-colors hover:border-slate-300 hover:bg-slate-50"
-          >
-            <Linkedin className="h-4 w-4" />
-            LinkedIn
-          </MagneticButton>
+          <a href={personalInfo.linkedIn} target="_blank" rel="noopener noreferrer" className="no-underline">
+            <LiquidButton size="lg" className="border-2 border-slate-200 text-slate-800 hover:bg-slate-50 font-bold">
+              <Linkedin className="h-4 w-4" />
+              LinkedIn
+            </LiquidButton>
+          </a>
         </motion.div>
 
         <motion.div
@@ -148,7 +141,6 @@ export function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Scroll indicator */}
       <motion.div
         animate={{ y: [0, 12, 0] }}
         transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
