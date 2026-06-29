@@ -33,7 +33,7 @@ export function Hero() {
   return (
     <section
       onMouseMove={handleMouseMove}
-      className="relative flex min-h-screen flex-col justify-center overflow-hidden px-4 pt-20 sm:px-6 md:px-12 lg:px-24"
+      className="relative flex min-h-[calc(100vh-4rem)] flex-col justify-center overflow-hidden px-4 pt-8 pb-16 sm:px-6 md:px-12 lg:px-24"
     >
       {/* Ambient depth orbs with parallax */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
