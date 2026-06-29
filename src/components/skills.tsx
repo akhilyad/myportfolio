@@ -33,19 +33,19 @@ const skills = [
 
 export function Skills() {
   return (
-    <section id="skills" className="py-16 sm:py-20 md:py-28 px-5 sm:px-6 md:px-12 lg:px-24 max-w-6xl mx-auto">
+    <section id="skills" className="py-14 sm:py-16 md:py-24 px-6 sm:px-8 md:px-16 lg:px-24 max-w-6xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="mb-10 sm:mb-12"
+        className="mb-8 sm:mb-10 md:mb-12"
       >
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">Technical Skills</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-slate-900">Technical Skills</h2>
         <div className="mt-2 h-1 w-20 rounded-full bg-blue-500" />
       </motion.div>
 
-      <div className="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
         {skills.map((domain, index) => (
           <motion.div
             key={domain.category}
@@ -53,12 +53,12 @@ export function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="min-w-0"
+            className="min-w-0 flex justify-center md:justify-start"
           >
             <GlowCard
               glowColor={domain.glowColor}
               customSize
-              className="h-full w-full !p-5 sm:!p-6 !gap-3 sm:!gap-4 !rounded-2xl !shadow-none hover:!shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-shadow duration-300"
+              className="h-full w-full max-w-[340px] sm:max-w-none !p-5 sm:!p-6 !gap-3 sm:!gap-4 !rounded-2xl !shadow-none hover:!shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-shadow duration-300"
             >
               <div className="flex flex-col h-full">
                 <h3 className="mb-3 sm:mb-4 text-xs font-bold uppercase tracking-[0.15em] text-slate-500">
