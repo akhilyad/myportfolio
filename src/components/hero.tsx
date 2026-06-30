@@ -75,24 +75,38 @@ export function Hero() {
                 <span className="whitespace-nowrap">Contact</span>
               </GlassButton>
 
-              <a
-                href="/myportfolio/Akhil_Yadav_ABB_ProjectLeadEngineer.pdf"
-                download
-                className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/20 backdrop-blur-xl px-5 py-2.5 sm:px-6 sm:py-3 md:px-7 md:py-3.5 text-sm font-bold text-slate-800 shadow-[0_4px_24px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.4)] hover:bg-white/30 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.5)] transition-all no-underline cursor-pointer"
+              <GlassButton
+                type="button"
+                aria-label="Resume"
+                onClick={() => {
+                  const link = document.createElement("a");
+                  link.href = "/myportfolio/Akhil_Yadav_ABB_ProjectLeadEngineer.pdf";
+                  link.download = "Akhil_Yadav_ABB_ProjectLeadEngineer.pdf";
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
+                glassColor="oklch(from var(--foreground) l c h / 8%)"
+                className="px-5 py-2.5 sm:px-6 sm:py-3 md:px-7 md:py-3.5 text-sm font-bold rounded-full"
+                contentClassName="gap-2"
               >
-                <FileText className="h-5 w-5" />
-                <span className="whitespace-nowrap">View Résumé</span>
-              </a>
+                <FileText className="h-4 w-4 sm:h-5 sm:w-5" />
+                <span className="whitespace-nowrap">Resume</span>
+              </GlassButton>
 
-              <a
-                href={personalInfo.linkedIn}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/20 backdrop-blur-xl px-5 py-2.5 sm:px-6 sm:py-3 md:px-7 md:py-3.5 text-sm font-bold text-slate-800 shadow-[0_4px_24px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.4)] hover:bg-white/30 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.5)] transition-all no-underline cursor-pointer"
+              <GlassButton
+                type="button"
+                aria-label="LinkedIn"
+                onClick={() => {
+                  window.open(personalInfo.linkedIn, "_blank", "noopener,noreferrer");
+                }}
+                glassColor="oklch(from var(--foreground) l c h / 8%)"
+                className="px-5 py-2.5 sm:px-6 sm:py-3 md:px-7 md:py-3.5 text-sm font-bold rounded-full"
+                contentClassName="gap-2"
               >
-                <Linkedin className="h-5 w-5" />
+                <Linkedin className="h-4 w-4 sm:h-5 sm:w-5" />
                 <span className="whitespace-nowrap">LinkedIn</span>
-              </a>
+              </GlassButton>
             </motion.div>
 
             <motion.div

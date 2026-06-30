@@ -57,7 +57,7 @@ export function Projects() {
                 <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-2 sm:mb-3 leading-snug">
                   {project.name}
                 </h3>
-                <p className="text-sm leading-relaxed text-slate-600 mb-4 sm:mb-5 flex-grow">
+                <p className="text-[13px] sm:text-sm leading-relaxed text-slate-600 mb-4 sm:mb-5 flex-grow">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-1.5 sm:gap-2">

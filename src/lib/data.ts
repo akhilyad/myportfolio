@@ -32,7 +32,7 @@ export interface SkillCategory {
 
 export const personalInfo: PersonalInfo = {
   name: "Akhil Yadav",
-  title: "Controls Design Engineer | EPMS and BMS | DCS/SCADA | IEC 61511 | Data Centers",
+  title: "Controls Design Engineer | EPMS and BMS | IEC 61511 | Data Centers",
   location: "Berlin, Germany",
   email: "akhil20698@gmail.com",
   phone: "+4917672678553",
@@ -50,10 +50,10 @@ export const experience: Experience[] = [
     dates: "Apr 2025 – Sep 2025",
     metrics: ["18% NCR cut", "35% OTD up", "6 sites", "680+ I/O", "42 panels"],
     bullets: [
-      "Acted as design authority for SLDs, control cabinet schematics and 33kV MV transformer drawings across 42 panels (680+ I/O); closed engineering errors before construction across 6 sites, avoiding a 2-week commissioning delay.",
-      "Coordinated in-house and OEM engineering teams (Huawei, SMA, KACO, Gantner) across 6 concurrent EPC sites; resolved RFIs and engineering issues during installation and commissioning, lifting OTD by 35%.",
-      "Led site engineering activities under limited supervision, set technical priorities and coordinated cross-discipline teams across electrical, controls and SCADA scope; delivered 6 concurrent sites to handover.",
-      "Authored SOPs, RFQs and commissioning protocols; produced risk reports with ranked mitigations from site audits; tracked KPI reporting via Power BI and procurement records in SAP.",
+      "Design authority for SLDs, control schematics and 33kV MV drawings (42 panels, 680+ I/O); caught errors pre-construction, avoiding a 2-week delay.",
+      "Coordinated in-house and OEM teams (Huawei, SMA, KACO) across 6 EPC sites; resolved commissioning RFIs to lift on-time delivery 35%.",
+      "Led site engineering across electrical, controls and SCADA scope, delivering 6 concurrent sites to handover.",
+      "Authored SOPs, RFQs and commissioning protocols; tracked KPIs in Power BI and procurement in SAP.",
     ],
   },
   {
@@ -63,10 +63,10 @@ export const experience: Experience[] = [
     dates: "Jan 2023 – Sep 2024",
     metrics: ["MTBF +43%", "HMI effort −25%", "38 defects fixed", "1,200+ signals", "USD 12M"],
     bullets: [
-      "Led ABB 800xA DCS migration of 45+ legacy ProControl P14 control modules, converting C-based logic to IEC 61131-3 Structured Text; acted as design authority for fault detection and alarm rationalisation, raising MTBF by 43%.",
-      "Designed SCADA/HMI graphics for 6 sequential process treatment stages in ABB 800xA to Design Data Sheets and usability standards, applying object-based engineering across the build and cutting HMI build effort by 25%.",
-      "Executed FAT, SAT and commissioning across 3 concurrent automation projects (USD 12M); resolved 38 control-level defects and maintained audit-ready I/O lists (1,200+ signals) and ISA sheets, achieving zero critical defects at go-live.",
-      "Configured fault-tolerant 800xA operations with server-to-server redundancy (HAC), Historian and OPC DA/AE/UA communications; engineered alarm strategy to NAMUR NE 107 with PLC tag optimisation.",
+      "Led ABB 800xA migration of 45+ legacy P14 modules to IEC 61131-3; owned fault detection and alarm rationalisation, raising MTBF 43%.",
+      "Designed SCADA/HMI graphics for 6 process stages in 800xA using object-based engineering, cutting build effort 25%.",
+      "Ran FAT/SAT and commissioning on 3 projects (USD 12M); cleared 38 defects across 1,200+ signals for zero critical defects at go-live.",
+      "Configured fault-tolerant 800xA with HAC redundancy, Historian and OPC; built alarm strategy to NAMUR NE 107.",
     ],
   },
   {
@@ -76,12 +76,11 @@ export const experience: Experience[] = [
     dates: "Sep 2020 – Dec 2022",
     metrics: ["99.7% uptime", "35% defect cut", "93% first-pass", "USD 250M", "1,850+ loops"],
     bullets: [
-      "Led DCS engineering on a USD 250M Qatar Energy offshore EPC; integrated 355 RTUs, 12 PLCs and Yokogawa CENTUM VP DCS across 4 platforms with N+1 redundancy, delivering 99.7% uptime and zero open items at handover.",
-      "Directed 14 FATs, 8 SATs and 1,850+ loop checks; coordinated engineering teams across 4 platforms and standardised procedures fleet-wide; achieved 93% first-pass rate and cut defect density by 35%.",
-      "Authored 180+ ISA sheets, 65 panel BOMs and 3,200+ cable schedules as design authority; reviewed SLDs and control schematics for power distribution, ESD, fire and gas and HVAC to IEC 61511 and API RP 551 with zero rework on any submission.",
-      "Coordinated 8 OEM vendors (Emerson, Honeywell, ABB, Schneider Electric) across India and Qatar; led technical bid reviews and RFI support; resolved 38 quality exceptions via structured corrective action.",
-      "Developed FBDs and ladder logic for power distribution monitoring, ESD, fire and gas detection and HVAC control; established multi-layer communication architecture (RTU-DCS/OPC, FAST/TOOLS-RTU/DNP3, UGS-DCS/Vnet-IP).",
-      "Configured and troubleshot IEC 61850 and DNP3 communications between RTUs and DCS; resolved OPC tag mapping, IP conflicts, nest-loading mismatches and RAS variable errors during pre-FAT.",
+      "Led DCS engineering on a USD 250M Qatar Energy offshore EPC; integrated 355 RTUs and Yokogawa CENTUM VP across 4 platforms (N+1) for 99.7% uptime.",
+      "Directed 14 FATs, 8 SATs and 1,850+ loop checks; standardised procedures fleet-wide for a 93% first-pass rate and 35% fewer defects.",
+      "Authored 180+ ISA sheets, 65 BOMs and 3,200+ cable schedules; reviewed SLDs for ESD, fire & gas and HVAC to IEC 61511 with zero rework.",
+      "Coordinated 8 OEM vendors (Emerson, Honeywell, ABB) across India and Qatar; led bid reviews and resolved 38 quality exceptions.",
+      "Developed FBD and ladder logic for ESD, fire & gas and HVAC; built multi-layer comms (IEC 61850, DNP3, OPC), resolving tag-mapping and IP conflicts at pre-FAT.",
     ],
   },
 ];
