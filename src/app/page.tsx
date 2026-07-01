@@ -12,11 +12,11 @@ export default function Home() {
       <div className="grain-overlay" aria-hidden="true" />
       <Header />
       <Hero />
+      <Skills />
       <Experience />
       <Education />
       <Projects />
       <ResearchPapers />
-      <Skills />
     </main>
   );
 }

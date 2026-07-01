@@ -6,7 +6,7 @@ import { ExternalLink } from "lucide-react";
 
 const papers = [
   {
-    name: "Gas Leak Detection ML Pipeline",
+    name: "A Comparative Study of Machine Learning Algorithms for Gas Leak Detection",
     description: "Published research on machine learning algorithms for gas leak detection in industrial environments. Springer Singapore, 2020 — covering feature engineering and classifier optimisation.",
     tags: ["Python", "Scikit-learn", "Signal Processing"],
     glowColor: "orange" as const,

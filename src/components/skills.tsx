@@ -45,7 +45,7 @@ export function Skills() {
         <div className="mt-2 h-1 w-20 rounded-full bg-blue-500" />
       </motion.div>
 
-      <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3 items-start">
         {skills.map((domain, index) => (
           <motion.div
             key={domain.category}
@@ -58,17 +58,17 @@ export function Skills() {
             <GlowCard
               glowColor={domain.glowColor}
               customSize
-              className="h-full w-full max-w-[340px] sm:max-w-none !p-5 sm:!p-6 !gap-3 sm:!gap-4 !rounded-2xl !shadow-none hover:!shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-shadow duration-300"
+              className="w-full max-w-[340px] sm:max-w-none !p-4 sm:!p-5 !gap-2 !rounded-2xl !shadow-none hover:!shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-shadow duration-300"
             >
-              <div className="flex flex-col h-full">
-                <h3 className="mb-3 sm:mb-4 text-xs font-bold uppercase tracking-[0.15em] text-slate-500">
+              <div className="flex flex-col">
+                <h3 className="mb-2.5 sm:mb-3 text-[11px] sm:text-xs font-bold uppercase tracking-[0.15em] text-slate-500">
                   {domain.category}
                 </h3>
-                <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                <div className="flex flex-wrap gap-1 sm:gap-1.5">
                   {domain.items.map((item) => (
                     <span
                       key={item}
-                      className="rounded-lg bg-slate-50/80 px-2.5 py-1 sm:px-3 sm:py-1.5 text-xs sm:text-sm font-medium text-slate-700 border border-slate-100/80 hover:border-slate-300 hover:bg-white transition-colors cursor-default"
+                      className="rounded-md bg-slate-50/80 px-2 py-0.5 sm:px-2.5 sm:py-1 text-[11px] sm:text-xs font-medium text-slate-700 border border-slate-100/80 hover:border-slate-300 hover:bg-white transition-colors cursor-default"
                     >
                       {item}
                     </span>

@@ -14,14 +14,6 @@ const projects = [
     linkLabel: "Go to Project",
   },
   {
-    name: "A Comparative Study of Machine Learning Algorithms for Gas Leak Detection",
-    description: "Built an end-to-end machine learning pipeline for real-time gas leak detection in process plants, combining acoustic sensor arrays with anomaly detection algorithms to achieve sub-second response times and 99.2% classification accuracy.",
-    tags: ["Python", "TensorFlow", "Signal Processing", "DCS Integration"],
-    glowColor: "purple" as const,
-    link: "https://www.researchgate.net/publication/345485153_A_Comparative_Study_of_Machine_Learning_Algorithms_for_Gas_Leak_Detection",
-    linkLabel: "Read Paper",
-  },
-  {
     name: "Green Hydrogen Cost Modelling",
     description: "Created a comprehensive techno-economic model for green hydrogen production facilities, incorporating electrolyser degradation curves, renewable energy intermittency profiles, and CAPEX/OPEX sensitivity analysis for investment decision support.",
     tags: ["PyPSA", "Excel VBA", "Techno-Economic Analysis", "Renewables"],
