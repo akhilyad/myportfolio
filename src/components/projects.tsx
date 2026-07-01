@@ -13,12 +13,6 @@ const projects = [
     link: "https://docs.google.com/spreadsheets/d/16kuogiz568CArvaD8rarbTpXbpB7gqw6FpeSNKOvMBE/edit?usp=sharing",
     linkLabel: "Go to Project",
   },
-  {
-    name: "Green Hydrogen Cost Modelling",
-    description: "Created a comprehensive techno-economic model for green hydrogen production facilities, incorporating electrolyser degradation curves, renewable energy intermittency profiles, and CAPEX/OPEX sensitivity analysis for investment decision support.",
-    tags: ["PyPSA", "Excel VBA", "Techno-Economic Analysis", "Renewables"],
-    glowColor: "green" as const,
-  },
 ];
 
 export function Projects() {
